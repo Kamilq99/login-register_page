@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+nav {
+    background-color: #343a40;
+    padding: 1rem;
+}
+
+nav div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav a, nav span {
+    color: white;
+    margin-left: 1rem;
+    text-decoration: none;
+}
+
+.container {
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+.alert {
+    margin-top: 1rem;
+}
