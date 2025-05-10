@@ -10,3 +10,5 @@ type User_Register struct {
 	Password string `json:"password"`
 	Email    string `json:"email"`
 }
+
+var User_Registers = make(map[string]User_Register)
