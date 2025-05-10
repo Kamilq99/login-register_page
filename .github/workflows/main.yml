@@ -1,42 +1,44 @@
 name: Login-Register-Page-CI-Pipeline
 
 on:
-    push:
-        branches:
-            - main
-    pull_request:
-        branches:
-            - main
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v2
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-            - name: Set up Go
-              uses: actions/setup-go@v2
-              with:
-                  go-version: 1.24.1
-            
-            - name: Cache Go modules
-              uses: actions/cache@v2
-              with:
-                  path: ~/go/pkg/mod
-                  key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
-                  restore-keys: |
-                      ${{ runner.os }}-go-
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.24.1
 
-            - name: Install dependencies
-              working-directory: ./backend
-              run: make install
+      - name: Cache Go modules
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/go-build
+            ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
 
-            - name: Build
-              working-directory: ./backend
-              run: make build
+      - name: Install dependencies
+        working-directory: ./backend
+        run: make install
 
-            - name: Test
-              working-directory: ./backend
-              run: make test
+      - name: Build
+        working-directory: ./backend
+        run: make build
+
+      - name: Test
+        working-directory: ./backend
+        run: make test
