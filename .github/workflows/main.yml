@@ -21,11 +21,6 @@ jobs:
               with:
                   go-version: 1.24.1
 
-            - name: Set up Makefile
-              uses: arduino/setup-makefile@v1
-              with:
-                  version: latest
-
             - name: Install dependencies
               working-directory: ./backend
               run: make install
