@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"login_register/models"
-	"login_register/register"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -23,7 +22,7 @@ func init() {
 
 func TestRegister(t *testing.T) {
 	r := gin.Default()
-	r.POST("/register", register.Register)
+	r.POST("/register", Register)
 
 	tests := []struct {
 		name               string
