@@ -85,7 +85,6 @@ func TestLogin_EmptyFields(t *testing.T) {
 func TestLogin_InvalidJSON(t *testing.T) {
 	router := setupRouter()
 
-	// Nieprawidłowy JSON
 	body := []byte(`{username: "john"}`)
 
 	req, _ := http.NewRequest("POST", "/login", bytes.NewBuffer(body))

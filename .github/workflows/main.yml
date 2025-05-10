@@ -21,18 +21,17 @@ jobs:
               with:
                   go-version: 1.24.1
 
+            - name: Set up Makefile
+              uses: arduino/setup-makefile@v1
+
             - name: Install dependencies
               working-directory: ./backend
-              run: go mod tidy
+              run: make install
 
             - name: Build
               working-directory: ./backend
-              run: go build -v ./...
+              run: make build
 
-            - name: Test Register
-              working-directory: ./backend/register
-              run: go test -v ./...
-
-            - name: Test Login
-              working-directory: ./backend/login
-              run: go test -v ./...
+            - name: Test
+              working-directory: ./backend
+              run: make test
