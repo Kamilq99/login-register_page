@@ -1,41 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Simple Blog</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin - Simple Blog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <h3>Admin Panel</h3>
+<body class="bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 min-h-screen flex flex-col font-sans">
 
-    <h4>Your Info</h4>
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Username</th>
-            <th>Email</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>John Doe</td>
-            <td>john_doe</td>
-            <td>john@example</td>
-        </tr>
-    </table>
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md px-6 py-4 flex justify-between items-center">
+    <ul class="flex space-x-6 text-blue-600 font-medium">
+      <li><a href="../Main_Page/Main.html" class="hover:underline">🏠 Home</a></li>
+      <li><a href="../Posts/Posts.html" class="hover:underline">📝 Posts</a></li>
+    </ul>
+    <ul>
+      <li><a href="../Login_Register/LoginRegister.html" class="text-blue-600 font-medium hover:underline">👤 Account</a></li>
+    </ul>
+  </nav>
 
-    <h4>Last Posts</h4>
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Content</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Post Title</td>
-            <td>Post Content</td>
-        </tr>
-    </table>
+  <!-- Main Content -->
+  <main class="flex-grow container mx-auto px-4 py-10 fade-in">
+
+    <h1 class="text-4xl font-bold text-gray-800 mb-6 text-center">🎩 Admin Panel</h1>
+
+    <!-- Admin Info -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-4">🧾 Your Info</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white border border-gray-200 shadow-md rounded-lg">
+          <thead class="bg-gray-100 text-gray-700">
+            <tr>
+              <th class="px-6 py-3 border-b">Id</th>
+              <th class="px-6 py-3 border-b">Name</th>
+              <th class="px-6 py-3 border-b">Username</th>
+              <th class="px-6 py-3 border-b">Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4 border-b">1</td>
+              <td class="px-6 py-4 border-b">John Doe</td>
+              <td class="px-6 py-4 border-b">john_doe</td>
+              <td class="px-6 py-4 border-b">john@example</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Last Posts -->
+    <section>
+      <h2 class="text-2xl font-semibold text-gray-700 mb-4">📰 Last Posts</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white border border-gray-200 shadow-md rounded-lg">
+          <thead class="bg-gray-100 text-gray-700">
+            <tr>
+              <th class="px-6 py-3 border-b">Id</th>
+              <th class="px-6 py-3 border-b">Title</th>
+              <th class="px-6 py-3 border-b">Content</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-4 border-b">1</td>
+              <td class="px-6 py-4 border-b">Post Title</td>
+              <td class="px-6 py-4 border-b">Post Content</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t py-4 text-center text-gray-500 text-sm">
+    &copy; 2025 Simple Blog. All rights reserved.
+  </footer>
+
 </body>
 </html>

@@ -1,42 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Simple Blog</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home - Simple Blog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <ul>
-        <li><a href="Main.html">Home</li>
-        <li><a href="Posts.html">Posts</li>
+<body class="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 min-h-screen flex flex-col font-sans relative z-10">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md px-6 py-4 flex justify-between items-center relative z-20">
+    <ul class="flex space-x-6 text-blue-600 font-medium">
+      <li><a href="./Main.html" class="hover:underline">🏠 Home</a></li>
+      <li><a href="../Posts/Posts.html" class="hover:underline">📝 Posts</a></li>
     </ul>
     <ul>
-        <li><a href="Login.html">Login</li>
-        <li><a href="Register.html">Register</li>
+      <li><a href="../Login_Register/LoginRegister.html" class="text-blue-600 font-medium hover:underline">👤 Account</a></li>
     </ul>
+  </nav>
 
-    <h2>Last Posts</h2>
+  <!-- Main Content -->
+  <main class="flex-grow container mx-auto px-4 py-12 relative z-20">
 
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Body</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Post 1</td>
-            <td>Post 1 Body</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Post 2</td>
-            <td>Post 2 Body</td>
-        </tr>
-    </table>
+    <!-- Banner / GIF -->
+    <div class="flex justify-center mb-8">
+      <img src="https://media.giphy.com/media/f3iwJFOVOwuy7K6FFw/giphy.gif" alt="Typing animation" class="rounded-xl shadow-lg w-full max-w-md">
+    </div>
 
-    <ul id="footer">
-        
-    </ul>
+    <h2 class="text-4xl font-extrabold text-gray-800 mb-8 text-center fade-in pulse-text">📰 Last Posts</h2>
+
+    <div class="overflow-x-auto fade-in">
+      <table class="min-w-full bg-white border border-gray-200 shadow-md rounded-lg overflow-hidden">
+        <thead class="bg-gray-100 text-gray-700 text-left">
+          <tr>
+            <th class="px-6 py-3 border-b">Id</th>
+            <th class="px-6 py-3 border-b">Title</th>
+            <th class="px-6 py-3 border-b">Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="hover:bg-gray-50 transition">
+            <td class="px-6 py-4 border-b">1</td>
+            <td class="px-6 py-4 border-b">Post 1</td>
+            <td class="px-6 py-4 border-b">Post 1 Body</td>
+          </tr>
+          <tr class="hover:bg-gray-50 transition">
+            <td class="px-6 py-4 border-b">2</td>
+            <td class="px-6 py-4 border-b">Post 2</td>
+            <td class="px-6 py-4 border-b">Post 2 Body</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t py-4 text-center text-gray-500 text-sm relative z-20">
+    &copy; 2025 Simple Blog. All rights reserved.
+  </footer>
+
 </body>
 </html>
