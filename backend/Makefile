@@ -3,7 +3,7 @@ Go = go
 all: test
 
 install:
-	$(Go) install
+	$(Go) mod download
 
 test:
 	$(Go) test -v ./register/...
